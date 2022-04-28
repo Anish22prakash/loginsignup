@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #logbox{
+            margin: auto;
+            border: 1px solid;
+            height: 500px;
+            width: 30%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 5px;
+             }
+             input{
+                 padding: 5px 120px 5px ;
+                 margin-left: 5px;
+                margin-top: 20px;
+                 border-radius: 1px
+             }
+            label{
+                 margin:0px 5px 8px 5px;
+             }
+             #submit{
+                text-align: center;
+                font-size: 20px;
+               margin-left: 50px;
+               border-radius: 5px;
+             }
+
+            
+    </style>
+</head>
+<body>
+    <h1>Masai</h1>
+
+    <div id="logbox">
+
+
+        <form id="form">
+            <input type="text" id="name" placeholder="Enter full name"><br>
+    
+          
+            <input type="email" id="email" placeholder="Enter email"><br>
+    
+           
+            <input type="password" id="password" placeholder="Enter password"><br>
+             
+            <input type="submit" value="SIGN UP" id="submit">
+        </form>
+
+    </div>
+   
+</body>
+</html>
+
+<script>
+      
+      document.querySelector("#form").addEventListener("submit",myfunction)
+    
+      var logdata=JSON.parse(localStorage.getItem("logindata"))||[]
+
+      function myfunction(){
+        event.preventDefault()
+        var data={
+            sname:form.name.value,
+            smail:form.email.value,
+            spass:form.password.value
+        }
+
+      logdata.push(data)
+      localStorage.setItem("logindata",JSON.stringify(logdata))
+      window.location.href="login.html"
+      }
+
+</script>
